@@ -1,14 +1,9 @@
 pipeline {
     agent any
-    stages {
-        stage('dir') {
-            steps {
-                sh 'ls'
-            }
-        }     
+    stages { 
         stage('env') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -f ./Spring-Boot-Sample/pom.xml'
             }
         }
         stage('build') {
