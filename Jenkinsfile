@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent Build-Container
     tools {
         maven 'maven'
         jdk 'jdk11'
