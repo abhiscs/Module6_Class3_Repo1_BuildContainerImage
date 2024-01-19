@@ -1,18 +1,9 @@
 pipeline {
-    agent Build-Container
-    tools {
-        maven 'maven'
-        jdk 'jdk11'
-    }
+    agent any
     stages {
         stage('env') {
             steps {
                 sh 'mvn --version'
-            }
-        }
-        stage('build') {
-            steps {
-                sh 'mvn clean install -B --no-transfer-progress'
             }
         }
     }
