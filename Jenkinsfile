@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'Build-Container'
+            label 'any'
         }
     }
     stages {
