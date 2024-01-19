@@ -1,22 +1,19 @@
 pipeline {
-    agent { 
-        node {
-            label 'any'
-        }
+    agent any
+    tools {
+        maven 'maven'
+        jdk 'jdk11'
     }
     stages {
-        stage('build') {
+        stage('env') {
             steps {
                 sh 'mvn --version'
             }
         }
-    }    
-    post {
-        success {
-            echo 'Job completed successfully'
-        }
-        failure {
-            echo 'Job failed'
+        stage('build') {
+            steps {
+                sh 'mvn clean install -B --no-transfer-progress'
+            }
         }
     }
 }
