@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('dir') {
             steps {
-                sh 'cd Spring-Boot-Sample'
+                sh 'ls'
             }
         }     
         stage('env') {
