@@ -1,9 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('env') {
+        stage('Build') {
             steps {
-                sh 'mvn --version'
+                // sh 'mvn --version'
+                sh "docker build -t springboot ."
             }
         }
     }
