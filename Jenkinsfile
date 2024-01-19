@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('env') {
+        stage('dir') {
             steps {
                 sh 'cd Spring-Boot-Sample'
             }
