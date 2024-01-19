@@ -6,11 +6,13 @@ pipeline {
             steps{
                 sh 'cd Spring-Boot-Sample'
             }
-            steps {
+        }     
+        stage('env') {
+            steps{
                 sh 'mvn clean install'
             }
-        }     
-        stage('Build') {
+        }
+        stage('build') {
             steps {
                 // sh 'mvn --version'
                 sh "docker build -t springboot ."
